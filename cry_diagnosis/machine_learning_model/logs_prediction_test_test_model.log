@@ -1,0 +1,5 @@
+2024-07-27 02:05:45 PM - INFO - Reading audio_20240727_134244.wav
+2024-07-27 02:05:45 PM - INFO - Time taken for reading file: 0.07154279999667779
+2024-07-27 02:05:45 PM - INFO - Starting feature engineering
+2024-07-27 02:05:46 PM - INFO - Time taken for feature engineering: 0.685972999985097
+2024-07-27 02:05:46 PM - INFO - Predicting...
