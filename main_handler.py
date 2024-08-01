@@ -1,8 +1,8 @@
 import pyaudio
 import wave
 import os
-from datetime import datetime
-import shutil
+from datetime import datetime, timedelta
+import threading
 from audio_processor import AudioProcessor
 from cry_diagnosis.yamnet_model.crying_detector import CryingDetector
 from curse_diagnosis.curse_detector import CurseDetector
@@ -17,15 +17,17 @@ class MainHandler:
         self.crying_detector = CryingDetector()
         self.sentence_classifier = SentenceClassifier()
         self.data_sender = DataSender()
-        self.create_audio_folder()
+        self.create_audio_folders()
+        self.buffer = []
+        self.buffer_duration = 30  # seconds
 
-    def create_audio_folder(self):
+    def create_audio_folders(self):
         if not os.path.exists('audioSounds'):
             os.makedirs('audioSounds')
+        if not os.path.exists('send_audio_server'):
+            os.makedirs('send_audio_server')
 
-    def save_audio_file(self, audio_data, sample_rate, channels, output_path):
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        filename = f'audio_{timestamp}.wav'
+    def save_audio_file(self, audio_data, sample_rate, channels, output_path, filename):
         filepath = os.path.join(output_path, filename)
 
         with wave.open(filepath, 'wb') as wf:
@@ -49,8 +51,10 @@ class MainHandler:
             while True:
                 text, audio_data = self.audio_processor.listen_for_speech()
 
-                # Save the audio data to a file
-                self.save_audio_file(audio_data, rate, channels, 'audioSounds')
+                # Add audio data to buffer
+                self.buffer.append((audio_data, datetime.now()))
+                self.buffer = [(data, ts) for data, ts in self.buffer if
+                               (datetime.now() - ts).seconds <= self.buffer_duration]
 
                 waveform = self.audio_processor.audio_to_waveform(audio_data, sample_rate=rate)
 
@@ -64,36 +68,42 @@ class MainHandler:
 
     def handle_crying_detection(self, waveform):
         if self.crying_detector.detect_crying(waveform):
-            event_data = {
-                "event": "crying_detected",
-                "timestamp": self.get_current_time()
-            }
-            print(f"Event: {event_data['event']}, Timestamp: {event_data['timestamp']}")
-            # self.data_sender.send_data(event_data)
+            self.send_event_data("crying_detected")
 
     def handle_curse_detection(self, text):
         curses = self.curse_detector.detect_curses(text)
         if curses:
-            event_data = {
-                "event": "curse_word_detected",
-                "word": curses,
-                "timestamp": self.get_current_time()
-            }
-            print(f"Event: {event_data['event']}, Word: {event_data['word']}, Timestamp: {event_data['timestamp']}")
-            # self.data_sender.send_data(event_data)
+            self.send_event_data("curse_word_detected", {"word": curses})
 
     def handle_sentence_classification(self, text):
         if text.strip():  # Check if text is not empty or only whitespace
             label = self.sentence_classifier.classify_sentence(text)
             if label == 'inappropriate':
-                event_data = {
-                    "event": "inappropriate_sentence_detected",
-                    "sentence": text,
-                    "timestamp": self.get_current_time()
-                }
-                print(
-                    f"Event: {event_data['event']}, Sentence: {event_data['sentence']}, Timestamp: {event_data['timestamp']}")
-                # self.data_sender.send_data(event_data)
+                self.send_event_data("inappropriate_sentence_detected", {"sentence": text})
+
+    def send_event_data(self, event_type, additional_data=None):
+        start_time = datetime.now() - timedelta(seconds=10)
+        end_time = datetime.now() + timedelta(seconds=20)
+        audio_clip = self.get_audio_clip(start_time, end_time)
+        filename = f'{event_type}_{datetime.now().strftime("%Y%m%d_%H%M%S")}.wav'
+        filepath = self.save_audio_file(audio_clip, 44100, 1, 'send_audio_server', filename)
+
+        event_data = {
+            "event": event_type,
+            "timestamp": self.get_current_time()
+        }
+        if additional_data:
+            event_data.update(additional_data)
+
+        self.data_sender.send_json_data(event_data)
+        self.data_sender.send_audio_file(filepath)
+
+    def get_audio_clip(self, start_time, end_time):
+        audio_clip = b''
+        for data, ts in self.buffer:
+            if start_time <= ts <= end_time:
+                audio_clip += data
+        return audio_clip
 
     def cleanup(self, stream, p):
         stream.stop_stream()
