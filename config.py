@@ -2,7 +2,7 @@ import os
 
 
 class Config:
-    SERVER_URL = "http://localhost:8080/process-data"
+    SERVER_URL = "http://localhost:8080/"
     YAMNET_MODEL_HANDLE = 'https://tfhub.dev/google/yamnet/1'
     CSV_FILEPATH = 'cry_diagnosis/yamnet_model/yamnet_class_map.csv'
     MODEL_DIR = 'sentence_diagnosis/model'

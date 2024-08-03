@@ -1,7 +1,7 @@
 import pyaudio
 import wave
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
 import threading
 from audio_processor import AudioProcessor
 from cry_diagnosis.yamnet_model.crying_detector import CryingDetector
@@ -17,17 +17,15 @@ class MainHandler:
         self.crying_detector = CryingDetector()
         self.sentence_classifier = SentenceClassifier()
         self.data_sender = DataSender()
-        self.create_audio_folders()
-        self.buffer = []
-        self.buffer_duration = 30  # seconds
+        self.previous_audio_data = b""
+        self.event_audio_data = b""
+        self.after_event_audio_data = b""
+        self.is_processing_event = False
+        self.microphone_lock = threading.Lock()
 
-    def create_audio_folders(self):
-        if not os.path.exists('audioSounds'):
-            os.makedirs('audioSounds')
-        if not os.path.exists('send_audio_server'):
-            os.makedirs('send_audio_server')
-
-    def save_audio_file(self, audio_data, sample_rate, channels, output_path, filename):
+    def save_audio_file(self, audio_data, sample_rate, channels, output_path, filename_prefix='audio'):
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f'{filename_prefix}_{timestamp}.wav'
         filepath = os.path.join(output_path, filename)
 
         with wave.open(filepath, 'wb') as wf:
@@ -49,61 +47,64 @@ class MainHandler:
 
         try:
             while True:
-                text, audio_data = self.audio_processor.listen_for_speech()
+                with self.microphone_lock:
+                    text, audio_data = self.audio_processor.listen_for_speech()
 
-                # Add audio data to buffer
-                self.buffer.append((audio_data, datetime.now()))
-                self.buffer = [(data, ts) for data, ts in self.buffer if
-                               (datetime.now() - ts).seconds <= self.buffer_duration]
+                self.previous_audio_data = self.event_audio_data
+                self.event_audio_data = audio_data
 
                 waveform = self.audio_processor.audio_to_waveform(audio_data, sample_rate=rate)
 
-                self.handle_crying_detection(waveform)
-                self.handle_curse_detection(text)
-                self.handle_sentence_classification(text)
+                if not self.is_processing_event:
+                    self.handle_event_detection("crying_detected", self.crying_detector.detect_crying, waveform)
+                    self.handle_event_detection("curse_word_detected", self.curse_detector.detect_curses, text)
+                    self.handle_event_detection("inappropriate_sentence_detected",
+                                                self.sentence_classifier.classify_sentence, text)
 
         except KeyboardInterrupt:
             print("Exiting...")
             self.cleanup(stream, p)
 
-    def handle_crying_detection(self, waveform):
-        if self.crying_detector.detect_crying(waveform):
-            self.send_event_data("crying_detected")
+    def handle_event_detection(self, event_name, detection_function, input_data):
+        if event_name == "crying_detected" and detection_function(input_data):
+            event_data = {
+                "event": event_name,
+                "timestamp": self.get_current_time()
+            }
+            threading.Thread(target=self.process_event, args=(event_data, event_name)).start()
 
-    def handle_curse_detection(self, text):
-        curses = self.curse_detector.detect_curses(text)
-        if curses:
-            self.send_event_data("curse_word_detected", {"word": curses})
+        elif event_name == "curse_word_detected":
+            detected_data = detection_function(input_data)
+            if detected_data:
+                event_data = {
+                    "event": event_name,
+                    "word": detected_data,
+                    "timestamp": self.get_current_time()
+                }
+                threading.Thread(target=self.process_event, args=(event_data, event_name)).start()
 
-    def handle_sentence_classification(self, text):
-        if text.strip():  # Check if text is not empty or only whitespace
-            label = self.sentence_classifier.classify_sentence(text)
-            if label == 'inappropriate':
-                self.send_event_data("inappropriate_sentence_detected", {"sentence": text})
+        elif event_name == "inappropriate_sentence_detected" and input_data.strip() and detection_function(
+                input_data) == 'inappropriate':
+            event_data = {
+                "event": event_name,
+                "sentence": input_data,
+                "timestamp": self.get_current_time()
+            }
+            threading.Thread(target=self.process_event, args=(event_data, event_name)).start()
 
-    def send_event_data(self, event_type, additional_data=None):
-        start_time = datetime.now() - timedelta(seconds=10)
-        end_time = datetime.now() + timedelta(seconds=20)
-        audio_clip = self.get_audio_clip(start_time, end_time)
-        filename = f'{event_type}_{datetime.now().strftime("%Y%m%d_%H%M%S")}.wav'
-        filepath = self.save_audio_file(audio_clip, 44100, 1, 'send_audio_server', filename)
-
-        event_data = {
-            "event": event_type,
-            "timestamp": self.get_current_time()
-        }
-        if additional_data:
-            event_data.update(additional_data)
-
+    def process_event(self, event_data, event_name):
+        self.is_processing_event = True
+        print(f"Event: {event_data['event']}, Timestamp: {event_data['timestamp']}")
         self.data_sender.send_json_data(event_data)
-        self.data_sender.send_audio_file(filepath)
 
-    def get_audio_clip(self, start_time, end_time):
-        audio_clip = b''
-        for data, ts in self.buffer:
-            if start_time <= ts <= end_time:
-                audio_clip += data
-        return audio_clip
+        with self.microphone_lock:
+            self.after_event_audio_data = self.audio_processor.listen_for_speech()[1]
+
+        combined_audio = self.previous_audio_data + self.event_audio_data + self.after_event_audio_data
+        server_audio_filepath = self.save_audio_file(combined_audio, 44100, 1, 'send_audio_server',
+                                                     filename_prefix=event_name)
+        self.data_sender.send_audio_file(server_audio_filepath)
+        self.is_processing_event = False
 
     def cleanup(self, stream, p):
         stream.stop_stream()
@@ -111,7 +112,8 @@ class MainHandler:
         p.terminate()
 
     def get_current_time(self):
-        return datetime.now().strftime("%Y%m%d_%H%M%S")
+        now = datetime.now()
+        return f"{now.day}/{now.month}/{now.year} {now.strftime('%H:%M:%S')}"
 
 
 if __name__ == "__main__":

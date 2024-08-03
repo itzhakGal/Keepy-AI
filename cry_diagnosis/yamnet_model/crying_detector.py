@@ -5,7 +5,6 @@ import csv
 from config import Config
 
 
-
 class CryingDetector:
     def __init__(self):
         self.yamnet_model = hub.load(Config.YAMNET_MODEL_HANDLE)
