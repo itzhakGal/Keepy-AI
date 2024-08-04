@@ -1,20 +1,24 @@
+import librosa
 import pyaudio
 import wave
 import os
 from datetime import datetime
 import threading
+import numpy as np
+import tensorflow as tf
 from audio_processor import AudioProcessor
 from cry_diagnosis.yamnet_model.crying_detector import CryingDetector
 from curse_diagnosis.curse_detector import CurseDetector
 from sentence_diagnosis.sentence_classifier import SentenceClassifier
 from server_communication.data_sender import DataSender
-
+from tensorflow.keras.models import load_model
 
 class MainHandler:
     def __init__(self):
         self.audio_processor = AudioProcessor()
         self.curse_detector = CurseDetector()
-        self.crying_detector = CryingDetector()
+        self.yamnet_crying_detector = CryingDetector()
+        self.cnn_crying_model = load_model('cry_diagnosis/machine_learning_model/cnn/model/baby_cry_cnn_model.h5')
         self.sentence_classifier = SentenceClassifier()
         self.data_sender = DataSender()
         self.previous_audio_data = b""
@@ -56,7 +60,7 @@ class MainHandler:
                 waveform = self.audio_processor.audio_to_waveform(audio_data, sample_rate=rate)
 
                 if not self.is_processing_event:
-                    self.handle_event_detection("crying_detected", self.crying_detector.detect_crying, waveform)
+                    self.handle_event_detection("crying_detected", self.detect_crying, waveform)
                     self.handle_event_detection("curse_word_detected", self.curse_detector.detect_curses, text)
                     self.handle_event_detection("inappropriate_sentence_detected",
                                                 self.sentence_classifier.classify_sentence, text)
@@ -64,6 +68,31 @@ class MainHandler:
         except KeyboardInterrupt:
             print("Exiting...")
             self.cleanup(stream, p)
+
+    def detect_crying(self, waveform):
+        yamnet_detected = self.yamnet_crying_detector.detect_crying(waveform)
+        cnn_detected = self.detect_crying_with_cnn(waveform.numpy())
+        return yamnet_detected or cnn_detected
+
+    def detect_crying_with_cnn(self, audio_data):
+        sample_rate = 16000
+        features = self.extract_features(audio_data, sample_rate)
+        if features is not None:
+            features = np.expand_dims(features, axis=0)
+            features = np.expand_dims(features, axis=2)
+            prediction = self.cnn_crying_model.predict(features, verbose=0)
+            return np.argmax(prediction, axis=1)[0] == 1
+        return False
+
+    def extract_features(self, audio_data, sample_rate):
+        try:
+            audio_data = audio_data / np.max(np.abs(audio_data))
+            mfccs = librosa.feature.mfcc(y=audio_data, sr=sample_rate, n_mfcc=40)
+            mfccs_scaled = np.mean(mfccs.T, axis=0)
+            return mfccs_scaled
+        except Exception as e:
+            print(f"Error encountered while parsing audio data: {e}")
+            return None
 
     def handle_event_detection(self, event_name, detection_function, input_data):
         if event_name == "crying_detected" and detection_function(input_data):
