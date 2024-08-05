@@ -5,13 +5,13 @@ import os
 from datetime import datetime
 import threading
 import numpy as np
-import tensorflow as tf
 from audio_processor import AudioProcessor
 from cry_diagnosis.yamnet_model.crying_detector import CryingDetector
 from curse_diagnosis.curse_detector import CurseDetector
 from sentence_diagnosis.sentence_classifier import SentenceClassifier
 from server_communication.data_sender import DataSender
 from tensorflow.keras.models import load_model
+
 
 class MainHandler:
     def __init__(self):
