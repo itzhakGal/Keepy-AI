@@ -1,3 +1,4 @@
+import uuid
 import librosa
 import pyaudio
 import wave
@@ -20,12 +21,16 @@ class MainHandler:
         self.yamnet_crying_detector = CryingDetector()
         self.cnn_crying_model = load_model('cry_diagnosis/machine_learning_model/cnn/model/baby_cry_cnn_model.h5')
         self.sentence_classifier = SentenceClassifier()
-        self.data_sender = DataSender()
+        self.kindergarten_name = 'tali'
+        self.data_sender = DataSender(self.kindergarten_name)
         self.previous_audio_data = b""
         self.event_audio_data = b""
         self.after_event_audio_data = b""
         self.is_processing_event = False
         self.microphone_lock = threading.Lock()
+
+    def generate_unique_id(self):
+        return str(uuid.uuid4())
 
     def save_audio_file(self, audio_data, sample_rate, channels, output_path, filename_prefix='audio'):
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -96,34 +101,35 @@ class MainHandler:
 
     def handle_event_detection(self, event_name, detection_function, input_data):
         if event_name == "crying_detected" and detection_function(input_data):
-            event_data = {
-                "event": event_name,
-                "timestamp": self.get_current_time()
-            }
-            threading.Thread(target=self.process_event, args=(event_data, event_name)).start()
+            self.create_and_send_event(event_name, input_data)
 
         elif event_name == "curse_word_detected":
             detected_data = detection_function(input_data)
             if detected_data:
-                event_data = {
-                    "event": event_name,
-                    "word": detected_data,
-                    "timestamp": self.get_current_time()
-                }
-                threading.Thread(target=self.process_event, args=(event_data, event_name)).start()
+                self.create_and_send_event(event_name, input_data, detected_data)
 
         elif event_name == "inappropriate_sentence_detected" and input_data.strip() and detection_function(
                 input_data) == 'inappropriate':
-            event_data = {
-                "event": event_name,
-                "sentence": input_data,
-                "timestamp": self.get_current_time()
-            }
-            threading.Thread(target=self.process_event, args=(event_data, event_name)).start()
+            self.create_and_send_event(event_name, input_data)
+
+    def create_and_send_event(self, event_name, input_data, detected_data=None):
+        event_data = {
+            "id": self.generate_unique_id(),
+            "event": event_name,
+            "timestamp": self.get_current_time(),
+            "kindergarten_name": self.kindergarten_name
+        }
+
+        if event_name == "curse_word_detected" and detected_data:
+            event_data["word"] = detected_data
+        elif event_name == "inappropriate_sentence_detected":
+            event_data["sentence"] = input_data
+
+        threading.Thread(target=self.process_event, args=(event_data, event_name)).start()
 
     def process_event(self, event_data, event_name):
         self.is_processing_event = True
-        print(f"Event: {event_data['event']}, Timestamp: {event_data['timestamp']}")
+        print(f"Event: {event_data['event']}, Timestamp: {event_data['timestamp']}, ID: {event_data['id']}, Kindergarten: {event_data['kindergarten_name']}")
         self.data_sender.send_json_data(event_data)
 
         with self.microphone_lock:
@@ -143,8 +149,3 @@ class MainHandler:
     def get_current_time(self):
         now = datetime.now()
         return f"{now.day}/{now.month}/{now.year} {now.strftime('%H:%M:%S')}"
-
-
-if __name__ == "__main__":
-    handler = MainHandler()
-    handler.main()
