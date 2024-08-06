@@ -22,7 +22,7 @@ class MainHandler:
         self.cnn_crying_model = load_model('cry_diagnosis/machine_learning_model/cnn/model/baby_cry_cnn_model.h5')
         self.sentence_classifier = SentenceClassifier()
         self.kindergarten_name = 'tali'
-        self.data_sender = DataSender(self.kindergarten_name)
+        self.data_sender = DataSender()
         self.previous_audio_data = b""
         self.event_audio_data = b""
         self.after_event_audio_data = b""
@@ -32,9 +32,7 @@ class MainHandler:
     def generate_unique_id(self):
         return str(uuid.uuid4())
 
-    def save_audio_file(self, audio_data, sample_rate, channels, output_path, filename_prefix='audio'):
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        filename = f'{filename_prefix}_{timestamp}.wav'
+    def save_audio_file(self, audio_data, sample_rate, channels, output_path, filename):
         filepath = os.path.join(output_path, filename)
 
         with wave.open(filepath, 'wb') as wf:
@@ -113,8 +111,9 @@ class MainHandler:
             self.create_and_send_event(event_name, input_data)
 
     def create_and_send_event(self, event_name, input_data, detected_data=None):
+        event_id = self.generate_unique_id()
         event_data = {
-            "id": self.generate_unique_id(),
+            "id": event_id,
             "event": event_name,
             "timestamp": self.get_current_time(),
             "kindergarten_name": self.kindergarten_name
@@ -125,11 +124,12 @@ class MainHandler:
         elif event_name == "inappropriate_sentence_detected":
             event_data["sentence"] = input_data
 
-        threading.Thread(target=self.process_event, args=(event_data, event_name)).start()
+        threading.Thread(target=self.process_event, args=(event_data, event_name, event_id)).start()
 
-    def process_event(self, event_data, event_name):
+    def process_event(self, event_data, event_name, event_id):
         self.is_processing_event = True
-        print(f"Event: {event_data['event']}, Timestamp: {event_data['timestamp']}, ID: {event_data['id']}, Kindergarten: {event_data['kindergarten_name']}")
+        print(
+            f"Event: {event_data['event']}, Timestamp: {event_data['timestamp']}, ID: {event_data['id']}, Kindergarten: {event_data['kindergarten_name']}")
         self.data_sender.send_json_data(event_data)
 
         with self.microphone_lock:
@@ -137,7 +137,7 @@ class MainHandler:
 
         combined_audio = self.previous_audio_data + self.event_audio_data + self.after_event_audio_data
         server_audio_filepath = self.save_audio_file(combined_audio, 44100, 1, 'send_audio_server',
-                                                     filename_prefix=event_name)
+                                                     filename=f'{event_id}.wav')
         self.data_sender.send_audio_file(server_audio_filepath)
         self.is_processing_event = False
 
@@ -149,3 +149,8 @@ class MainHandler:
     def get_current_time(self):
         now = datetime.now()
         return f"{now.day}/{now.month}/{now.year} {now.strftime('%H:%M:%S')}"
+
+
+if __name__ == "__main__":
+    handler = MainHandler()
+    handler.main()
