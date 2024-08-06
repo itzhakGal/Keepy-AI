@@ -110,21 +110,21 @@ class MainHandler:
                 input_data) == 'inappropriate':
             self.create_and_send_event(event_name, input_data)
 
-    def create_and_send_event(self, event_name, input_data, detected_data=None):
+    def create_and_send_event(self, event_type, input_data, detected_data=None):
         event_id = self.generate_unique_id()
         event_data = {
             "id": event_id,
-            "event": event_name,
+            "event": event_type,
             "timestamp": self.get_current_time(),
             "kindergarten_name": self.kindergarten_name
         }
 
-        if event_name == "curse_word_detected" and detected_data:
+        if event_type == "curse_word_detected" and detected_data:
             event_data["word"] = detected_data
-        elif event_name == "inappropriate_sentence_detected":
+        elif event_type == "inappropriate_sentence_detected":
             event_data["sentence"] = input_data
 
-        threading.Thread(target=self.process_event, args=(event_data, event_name, event_id)).start()
+        threading.Thread(target=self.process_event, args=(event_data, event_type, event_id)).start()
 
     def process_event(self, event_data, event_name, event_id):
         self.is_processing_event = True
