@@ -6,6 +6,8 @@ import os
 from datetime import datetime
 import threading
 import numpy as np
+
+from config import Config
 from audio_processor import AudioProcessor
 from cry_diagnosis.yamnet_model.crying_detector import CryingDetector
 from curse_diagnosis.curse_detector import CurseDetector
@@ -19,7 +21,7 @@ class MainHandler:
         self.audio_processor = AudioProcessor()
         self.curse_detector = CurseDetector()
         self.yamnet_crying_detector = CryingDetector()
-        self.cnn_crying_model = load_model('cry_diagnosis/machine_learning_model/cnn/model/baby_cry_cnn_model.h5')
+        self.cnn_crying_model = load_model(Config.CNN_MODEL_PATH)
         self.sentence_classifier = SentenceClassifier()
         self.kindergarten_name = 'tali'
         self.data_sender = DataSender()
