@@ -28,6 +28,7 @@ class MainHandler:
         self.previous_audio_data = b""
         self.event_audio_data = b""
         self.after_event_audio_data = b""
+        self.sample_rate = 44100
         self.is_processing_event = False
         self.microphone_lock = threading.Lock()
 
@@ -112,6 +113,46 @@ class MainHandler:
                 input_data) == 'inappropriate':
             self.create_and_send_event(event_name, input_data)
 
+    def calculate_crying_intensity(self, waveform, sample_rate=16000):
+        # Compute the Root Mean Square (RMS) energy for the waveform
+        rms_energy = librosa.feature.rms(y=waveform)[0]
+
+        # Normalize the RMS energy to a 1-10 scale for intensity
+        intensity = np.mean(rms_energy) * 10  # This is a simplified scaling
+        intensity = min(max(intensity, 1), 10)  # Clip values to be between 1 and 10
+
+        return intensity
+
+
+    def calculate_crying_duration(self, waveform, sample_rate=16000):
+        # Apply a simple threshold to determine where crying occurs in the waveform
+        threshold = 0.02  # Adjust this threshold as necessary
+        non_silent_intervals = librosa.effects.split(y=waveform, top_db=20)
+
+        # Calculate total duration of crying in seconds
+        total_crying_duration = 0
+        for start, end in non_silent_intervals:
+            segment_duration = (end - start) / sample_rate
+            total_crying_duration += segment_duration
+
+        return int(total_crying_duration)
+
+    # def create_and_send_event(self, event_type, input_data, detected_data=None):
+    #     event_id = self.generate_unique_id()
+    #     event_data = {
+    #         "id": event_id,
+    #         "event": event_type,
+    #         "timestamp": self.get_current_time(),
+    #         "kindergarten_name": self.kindergarten_name
+    #     }
+    #
+    #     if event_type == "curse_word_detected" and detected_data:
+    #         event_data["word"] = detected_data
+    #     elif event_type == "inappropriate_sentence_detected":
+    #         event_data["sentence"] = input_data
+    #
+    #     threading.Thread(target=self.process_event, args=(event_data, event_type, event_id)).start()
+
     def create_and_send_event(self, event_type, input_data, detected_data=None):
         event_id = self.generate_unique_id()
         event_data = {
@@ -120,6 +161,11 @@ class MainHandler:
             "timestamp": self.get_current_time(),
             "kindergarten_name": self.kindergarten_name
         }
+        if event_type == "crying_detected":
+            intensity = self.calculate_crying_intensity(input_data, sample_rate=self.sample_rate)
+            duration = self.calculate_crying_duration(input_data, sample_rate=self.sample_rate)
+            event_data["intensity"] = intensity
+            event_data["duration"] = duration
 
         if event_type == "curse_word_detected" and detected_data:
             event_data["word"] = detected_data
