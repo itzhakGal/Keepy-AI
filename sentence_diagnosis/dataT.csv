@@ -1,0 +1,1388 @@
+sentence,label
+"Sit down and be quiet",inappropriate
+"Good job!",appropriate
+"Stop crying!",inappropriate
+"You are doing great",appropriate
+"Shut up!",inappropriate
+"Keep it up",appropriate
+"Don't be silly",inappropriate
+"Well done!",appropriate
+"Stop that right now!",inappropriate
+"Ugly",inappropriate
+"Your drawing is ugly",inappropriate
+"Excellent work",appropriate
+"Why are you crying?",inappropriate
+"Nice effort",appropriate
+"You need to listen!",inappropriate
+"Fantastic job",appropriate
+"Quiet down!",inappropriate
+"Great performance",appropriate
+"Be quiet!",inappropriate
+"Wonderful",appropriate
+"Stop it!",inappropriate
+"You are amazing",appropriate
+"Do you want me to call your parents?",inappropriate
+"You're so clever!",appropriate
+"What's wrong?",inappropriate
+"You're so talented",appropriate
+"Just be quiet!",inappropriate
+"You're doing great",appropriate
+"Don't act like that",inappropriate
+"You're very smart",appropriate
+"How many times do I have to tell you?",inappropriate
+"You're a star",appropriate
+"Get it together!",inappropriate
+"You did an awesome job",appropriate
+"What's your problem?",inappropriate
+"You're fantastic",appropriate
+"Why can't you be like the others?",inappropriate
+"You're wonderful",appropriate
+"Stop being annoying",inappropriate
+"You're a great kid",appropriate
+"Do you ever listen?",inappropriate
+"Keep up the good work",appropriate
+"You're a troublemaker",inappropriate
+"You're so kind",appropriate
+"What's the matter?",inappropriate
+"You did really well",appropriate
+"Don't be a nuisance",inappropriate
+"You're doing a fantastic job",appropriate
+"Can't you do anything right?",inappropriate
+"You're exceptional",appropriate
+"Why are you so difficult?",inappropriate
+"You're extraordinary",appropriate
+"Are you listening?",inappropriate
+"You're very bright",appropriate
+"Don't make me repeat myself",inappropriate
+"You're really gifted",appropriate
+"Pay attention!",inappropriate
+"You're a quick learner",appropriate
+"Why are you always causing trouble?",inappropriate
+"You're so polite",appropriate
+"Is there something wrong?",inappropriate
+"You're really impressive",appropriate
+"Why are you misbehaving?",inappropriate
+"You're very thoughtful",appropriate
+"Listen carefully",inappropriate
+"You're so considerate",appropriate
+"Are you trying to be naughty?",inappropriate
+"You're such a joy",appropriate
+"Can't you ever behave?",inappropriate
+"You're a delight",appropriate
+"Why do you always have to be a problem?",inappropriate
+"You're very respectful",appropriate
+"What's wrong with your behavior?",inappropriate
+"You're incredibly talented",appropriate
+"Do you want to go to timeout?",inappropriate
+"You're so friendly",appropriate
+"Why do you always have to make things difficult?",inappropriate
+"You're very cooperative",appropriate
+"Is it so hard to follow instructions?",inappropriate
+"You're so well-behaved",appropriate
+"Why are you being disruptive?",inappropriate
+"You're a great listener",appropriate
+"What's the matter with you?",inappropriate
+"You're so obedient",appropriate
+"Why do you have to be such a pain?",inappropriate
+"You're very diligent",appropriate
+"Do you think this is a joke?",inappropriate
+"You're so hardworking",appropriate
+"Why are you being disrespectful?",inappropriate
+"You're very committed",appropriate
+"Are you paying attention?",inappropriate
+"You're very reliable",appropriate
+"Why can't you sit still?",inappropriate
+"You're so trustworthy",appropriate
+"Are you trying to get into trouble?",inappropriate
+"You're very dependable",appropriate
+"Do you want to be in trouble?",inappropriate
+"You're very honest",appropriate
+"Why do you always have to disobey?",inappropriate
+"Sit here quietly",inappropriate
+"You're so creative",appropriate
+"Stop talking!",inappropriate
+"You're so helpful",appropriate
+"Why are you making noise?",inappropriate
+"You're very gentle",appropriate
+"Don't be loud",inappropriate
+"You're very caring",appropriate
+"Behave yourself!",inappropriate
+"You're very loving",appropriate
+"Stop being rude",inappropriate
+"You're so fun",appropriate
+"Listen up!",inappropriate
+"You're so curious",appropriate
+"Why are you so loud?",inappropriate
+"You're so friendly",appropriate
+"Don't interrupt!",inappropriate
+"You're very joyful",appropriate
+"Be still!",inappropriate
+"You're so neat",appropriate
+"Stop fidgeting!",inappropriate
+"You're so nice",appropriate
+"Why are you so restless?",inappropriate
+"You're very patient",appropriate
+"Do you ever sit still?",inappropriate
+"You're so peaceful",appropriate
+"Are you trying to annoy me?",inappropriate
+"You're very playful",appropriate
+"Don't move!",inappropriate
+"You're very pleasant",appropriate
+"Sit down!",inappropriate
+"You're very positive",appropriate
+"Don't make a sound",inappropriate
+"You're so considerate",appropriate
+"Why are you always talking?",inappropriate
+"You're so enthusiastic",appropriate
+"Stop shouting!",inappropriate
+"You're very friendly",appropriate
+"Why are you so fussy?",inappropriate
+"You're so gentle",appropriate
+"Be silent!",inappropriate
+"You're so generous",appropriate
+"Don't make any noise",inappropriate
+"You're so helpful",appropriate
+"Stop playing around!",inappropriate
+"You're so honest",appropriate
+"Why can't you listen?",inappropriate
+"You're very loving",appropriate
+"Don't make me tell you again",inappropriate
+"You're very optimistic",appropriate
+"You're very patient",appropriate
+"Stop bothering everyone",inappropriate
+"You're so polite",appropriate
+"Sit down now",inappropriate
+"You're very respectful",appropriate
+"Don't talk back",inappropriate
+"You're very sweet",appropriate
+"Why can't you sit still?",inappropriate
+"You're very thankful",appropriate
+"Stop making noise",inappropriate
+"You're so thoughtful",appropriate
+"Do you ever listen?",inappropriate
+"You're very truthful",appropriate
+"Don't be disruptive",inappropriate
+"You're very understanding",appropriate
+"Stop being noisy",inappropriate
+"You're very unique",appropriate
+"Stop fooling around",inappropriate
+"You're very wise",appropriate
+"Don't act up",inappropriate
+"You're very wonderful",appropriate
+"Why can't you behave?",inappropriate
+"You're very youthful",appropriate
+"Stop running around",inappropriate
+"You're very zealous",appropriate
+"Stop making a scene",inappropriate
+"You're very attentive",appropriate
+"Stop talking loudly",inappropriate
+"You're very bright",appropriate
+"Sit down quietly",inappropriate
+"You're very capable",appropriate
+"Don't make a fuss",inappropriate
+"You're very caring",appropriate
+"Don't make me raise my voice",inappropriate
+"You're very cheerful",appropriate
+"Don't act silly",inappropriate
+"You're very curious",appropriate
+"Don't be a distraction",inappropriate
+"You're very dependable",appropriate
+"Don't make me repeat myself",inappropriate
+"You're very diligent",appropriate
+"Stop whining",inappropriate
+"You're very determined",appropriate
+"Don't make trouble",inappropriate
+"You're very friendly",appropriate
+"Stop causing problems",inappropriate
+"You're very generous",appropriate
+"Don't misbehave",inappropriate
+"You're very gentle",appropriate
+"Don't make noise",inappropriate
+"You're very hardworking",appropriate
+"Don't make me shout",inappropriate
+"You're very helpful",appropriate
+"Don't cause a scene",inappropriate
+"You're very honest",appropriate
+"Don't be disruptive",inappropriate
+"You're very imaginative",appropriate
+"Don't make a racket",inappropriate
+"You're very joyful",appropriate
+"Stop being loud",inappropriate
+"You're very kind",appropriate
+"Don't make me angry",inappropriate
+"You're very loving",appropriate
+"Don't make me punish you",inappropriate
+"You're very loyal",appropriate
+"Stop being a problem",inappropriate
+"You're very mindful",appropriate
+"Don't make a fuss",inappropriate
+"You're very nice",appropriate
+"Don't talk too much",inappropriate
+"You're very observant",appropriate
+"Stop causing trouble",inappropriate
+"You're very organized",appropriate
+"Don't make a mess",inappropriate
+"You're very patient",appropriate
+"Don't act out",inappropriate
+"You're very peaceful",appropriate
+"Don't make me raise my voice",inappropriate
+"You're very polite",appropriate
+"Don't be noisy",inappropriate
+"You're very positive",appropriate
+"Don't make trouble",inappropriate
+"You're very proactive",appropriate
+"Stop being disruptive",inappropriate
+"You're very quiet",appropriate
+"Don't make me come over there",inappropriate
+"Stop it now",inappropriate
+"Don't make me count to three",inappropriate
+"Sit down quietly",inappropriate
+"Don't make me shout",inappropriate
+"Stop making trouble",inappropriate
+"Stop talking right now",inappropriate
+"Sit down and behave",inappropriate
+"Don't be noisy",inappropriate
+"Stop acting out",inappropriate
+"Don't make a scene",inappropriate
+"Stop causing trouble",inappropriate
+"Sit here and be quiet",inappropriate
+"Don't be disruptive",inappropriate
+"Stop being loud",inappropriate
+"Stop making noise",inappropriate
+"Don't talk back",inappropriate
+"Let's use our inside voices",appropriate
+"Do you understand?",appropriate
+"Can you please be quiet?",appropriate
+"I'm proud of you",appropriate
+"Would you like to join?",appropriate
+"Please listen",appropriate
+"Why aren't you listening?",inappropriate
+"Come here, please",appropriate
+"Take your time",appropriate
+"Please stop that",appropriate
+"Do you need help?",appropriate
+"Can you calm down?",appropriate
+"Let's try again",appropriate
+"That's not okay",appropriate
+"You are so talented",appropriate
+"Please focus",appropriate
+"Do you want to explain?",appropriate
+"Let's talk about it",appropriate
+"Great job today",appropriate
+"That was unkind",appropriate
+"Can you share?",appropriate
+"Let's work together",appropriate
+"Take a deep breath",appropriate
+"Please wait your turn",appropriate
+"That's enough",inappropriate
+"You can do it",appropriate
+"That's inappropriate",appropriate
+"Calm down",inappropriate
+"I appreciate you",appropriate
+"Can you listen?",appropriate
+"Please don't shout",appropriate
+"Let's be respectful",appropriate
+"You're making me angry",inappropriate
+"You're wasting time",inappropriate
+"That's very creative",appropriate
+"Do you need a break?",appropriate
+"Why are you yelling?",inappropriate
+"Can you stop?",inappropriate
+"Let's be kind",appropriate
+"You did it!",appropriate
+"That's unacceptable",inappropriate
+"Why are you talking?",inappropriate
+"Let's stay focused",appropriate
+"Please don't interrupt",appropriate
+"That was wonderful",appropriate
+"You need to stop",inappropriate
+"Great effort",appropriate
+"Why are you misbehaving?",inappropriate
+"Please be gentle",appropriate
+"Stop fooling around",inappropriate
+"You are very special",appropriate
+"That's not nice",appropriate
+"Why are you so noisy?",inappropriate
+"You're being difficult",inappropriate
+"Please sit down",appropriate
+"Let's be quiet",appropriate
+"Can you be patient?",appropriate
+"That was rude",inappropriate
+"You're being naughty",inappropriate
+"Great try",appropriate
+"That's enough noise",inappropriate
+"Why are you so rude?",inappropriate
+"Please wait",appropriate
+"That was fantastic",appropriate
+"Do you need assistance?",appropriate
+"Please don't argue",appropriate
+"You're making a mess",inappropriate
+"Let's not do that",appropriate
+"You're too loud",inappropriate
+"Please be nice",appropriate
+"You're acting up",inappropriate
+"Great work",appropriate
+"That's very thoughtful",appropriate
+"Why can't you be good?",inappropriate
+"Let's stay calm",appropriate
+"Please pay attention",appropriate
+"Stop being disruptive",inappropriate
+"You did great",appropriate
+"That was incredible",appropriate
+"Why are you disobeying?",inappropriate
+"Please listen to me",appropriate
+"You're causing trouble",inappropriate
+"That's brilliant",appropriate
+"Why are you so loud?",inappropriate
+"Please be quiet",appropriate
+"Stop causing trouble",inappropriate
+"Why can't you be still?",inappropriate
+"Let's not argue",appropriate
+"That was very kind",appropriate
+"Why are you so annoying?",inappropriate
+"You're being disruptive",inappropriate
+"Can you be quiet?",appropriate
+"That's excellent",appropriate
+"Why are you so difficult?",inappropriate
+"You're being too loud",inappropriate
+"Can you calm down?",appropriate
+"That's not polite",appropriate
+"Stop acting out",inappropriate
+"You're doing well",appropriate
+"That was amazing",appropriate
+"Why can't you behave?",inappropriate
+"Please don't do that",appropriate
+"You're acting up again",inappropriate
+"Can you behave?",appropriate
+"That's wonderful",appropriate
+"Why are you being bad?",inappropriate
+"You're too noisy",inappropriate
+"Please stay calm",appropriate
+"Let's be nice",appropriate
+"That was great",appropriate
+"Why are you shouting?",inappropriate
+"You're being noisy",inappropriate
+"Can you focus?",appropriate
+"That's very helpful",appropriate
+"Why are you being mean?",inappropriate
+"You're misbehaving",inappropriate
+"Please sit still",appropriate
+"Let's try to listen",appropriate
+"That was awesome",appropriate
+"Why are you so restless?",inappropriate
+"You're being rude",inappropriate
+"Can you wait?",appropriate
+"That's very nice",appropriate
+"Why are you disruptive?",inappropriate
+"You're causing problems",inappropriate
+"Please don't fight",appropriate
+"Let's work together",appropriate
+"That was perfect",appropriate
+"Why are you not listening?",inappropriate
+"You're being mean",inappropriate
+"Can you behave?",appropriate
+"That's very good",appropriate
+"Why are you not behaving?",inappropriate
+"You're making noise",inappropriate
+"Please be patient",appropriate
+"Let's try to be quiet",appropriate
+"That was very thoughtful",appropriate
+"Why are you so disruptive?",inappropriate
+"You're being a nuisance",inappropriate
+"Can you be kind?",appropriate
+"That's very nice of you",appropriate
+"Why are you so loud?",inappropriate
+"You're making a scene",inappropriate
+"Please stay quiet",appropriate
+"Let's be gentle",appropriate
+"That was very generous",appropriate
+"Why are you so disruptive?",inappropriate
+"You're being too noisy",inappropriate
+"Can you listen?",appropriate
+"That's very impressive",appropriate
+"Why are you being bad?",inappropriate
+"You're causing chaos",inappropriate
+"Please stop shouting",appropriate
+"Let's be respectful",appropriate
+"That was very creative",appropriate
+"Why are you so disobedient?",inappropriate
+"You're making trouble",inappropriate
+"Can you calm down?",appropriate
+"That's very good of you",appropriate
+"Why are you so troublesome?",inappropriate
+"You're being unruly",inappropriate
+"Please stay calm",appropriate
+"Let's be nice",appropriate
+"That was very helpful",appropriate
+"Why are you acting up?",inappropriate
+"You're causing problems",inappropriate
+"Can you be quiet?",appropriate
+"That's very kind",appropriate
+"Why are you being disruptive?",inappropriate
+"You're making it difficult",inappropriate
+"Please be nice",appropriate
+"Let's try to be quiet",appropriate
+"That was very polite",appropriate
+"Why are you misbehaving?",inappropriate
+"You're being too loud",inappropriate
+"Can you sit still?",appropriate
+"That's very good of you",appropriate
+"Why are you so noisy?",inappropriate
+"You're making it hard",inappropriate
+"Please don't interrupt",appropriate
+"Let's be calm",appropriate
+"That was very nice",appropriate
+"Why are you so loud?",inappropriate
+"You're being difficult",inappropriate
+"Can you listen?",appropriate
+"That's very impressive",appropriate
+"Why are you causing trouble?",inappropriate
+"You're making it tough",inappropriate
+"Please be patient",appropriate
+"Let's be gentle",appropriate
+"That was very thoughtful",appropriate
+"Why are you so difficult?",inappropriate
+"You're being a problem",inappropriate
+"Can you stop?",appropriate
+"That's very generous",appropriate
+"Why are you acting out?",inappropriate
+"You're making it hard for everyone",inappropriate
+"Please stay calm",appropriate
+"Let's be nice",appropriate
+"That was very creative",appropriate
+"Why are you being noisy?",inappropriate
+"You're being too loud",inappropriate
+"Can you behave?",appropriate
+"That's very polite",appropriate
+"Why are you causing problems?",inappropriate
+"You're making a scene",inappropriate
+"Please be quiet",appropriate
+"Let's try to be nice",appropriate
+"That was very impressive",appropriate
+"Why are you so loud?",inappropriate
+"You're being difficult",inappropriate
+"Can you listen?",appropriate
+"That's very good",appropriate
+"Why are you so disruptive?",inappropriate
+"You're making it difficult",inappropriate
+"Please stay calm",appropriate
+"Let's be respectful",appropriate
+"That was very thoughtful",appropriate
+"Why are you so noisy?",inappropriate
+"You're being too loud",inappropriate
+"Can you behave?",appropriate
+"That's very kind",appropriate
+"Why are you causing trouble?",inappropriate
+"You're making a mess",inappropriate
+"Please be patient",appropriate
+"Let's be gentle",appropriate
+"That was very nice",appropriate
+"Why are you so disruptive?",inappropriate
+"You're being a problem",inappropriate
+"Can you stop?",appropriate
+"That's very generous",appropriate
+"Why are you acting out?",inappropriate
+"You're making it tough",inappropriate
+"Please don't shout",appropriate
+"Let's be nice",appropriate
+"That was very creative",appropriate
+"Why are you being noisy?",inappropriate
+"You're being too loud",inappropriate
+"Can you be quiet?",appropriate
+"That's very impressive",appropriate
+"Why are you causing problems?",inappropriate
+"You're making it hard",inappropriate
+"Please stay calm",appropriate
+"Let's be respectful",appropriate
+"That was very thoughtful",appropriate
+"Why are you so loud?",inappropriate
+"You're being difficult",inappropriate
+"Can you listen?",appropriate
+"That's very good of you",appropriate
+"Why are you so disruptive?",inappropriate
+"Let's try to be good listeners",appropriate
+"Why are you not cooperating?",inappropriate
+"Please finish your work",appropriate
+"You're doing a fantastic job",appropriate
+"Why are you being stubborn?",inappropriate
+"Can you follow directions?",appropriate
+"You're so creative",appropriate
+"Why do you always interrupt?",inappropriate
+"You're doing amazing",appropriate
+"Please don't do that",appropriate
+"Why are you causing a scene?",inappropriate
+"You're so talented",appropriate
+"Stop making a mess",inappropriate
+"Can you stay focused?",appropriate
+"You're very kind",appropriate
+"Why can't you be still?",inappropriate
+"Let's keep trying",appropriate
+"Please be mindful of others",appropriate
+"Why are you being so loud?",inappropriate
+"You're such a great helper",appropriate
+"Please sit still and listen",appropriate
+"Why are you being difficult?",inappropriate
+"You're so responsible",appropriate
+"Stop being so noisy",inappropriate
+"Let's work on this together",appropriate
+"Please be considerate",appropriate
+"Why are you acting up?",inappropriate
+"You're very special",appropriate
+"Stop running around",inappropriate
+"Can you pay attention?",appropriate
+"You're so polite",appropriate
+"Why are you being so disruptive?",inappropriate
+"Please follow instructions",appropriate
+"You're a great listener",appropriate
+"Stop that behavior",inappropriate
+"Let's be good friends",appropriate
+"Please don't argue with me",appropriate
+"Why can't you listen?",inappropriate
+"You're very intelligent",appropriate
+"Stop talking back",inappropriate
+"Can you help me?",appropriate
+"You're so diligent",appropriate
+"Why are you so restless?",inappropriate
+"Let's be patient",appropriate
+"Please don't be disruptive",appropriate
+"Why are you being so difficult?",inappropriate
+"You're very thoughtful",appropriate
+"Stop being a nuisance",inappropriate
+"Can you be quiet for a moment?",appropriate
+"You're so reliable",appropriate
+"Why are you making a fuss?",inappropriate
+"Let's work quietly",appropriate
+"Please calm yourself",appropriate
+"Why are you not sitting?",inappropriate
+"You're very understanding",appropriate
+"Stop being disruptive",inappropriate
+"Can you follow the rules?",appropriate
+"You're so hardworking",appropriate
+"Why are you causing problems?",inappropriate
+"Let's try to be still",appropriate
+"Please be nice to each other",appropriate
+"Why are you always shouting?",inappropriate
+"You're very cooperative",appropriate
+"Stop being so rude",inappropriate
+"Can you be a bit quieter?",appropriate
+"You're very creative",appropriate
+"Why are you being so noisy?",inappropriate
+"Let's use kind words",appropriate
+"Please pay attention to me",appropriate
+"Why are you not behaving?",inappropriate
+"You're very good at this",appropriate
+"Stop making trouble",inappropriate
+"Can you stay in your seat?",appropriate
+"You're very caring",appropriate
+"Why are you acting out?",inappropriate
+"Let's focus on the task",appropriate
+"Please don't be loud",appropriate
+"Why are you being so naughty?",inappropriate
+"You're very talented",appropriate
+"Stop being difficult",inappropriate
+"Can you be polite?",appropriate
+"You're very thoughtful",appropriate
+"Why are you not paying attention?",inappropriate
+"Let's be respectful of others",appropriate
+"Please don't run around",appropriate
+"Why are you always causing trouble?",inappropriate
+"You're very gentle",appropriate
+"Stop shouting",inappropriate
+"Can you stay calm?",appropriate
+"You're very responsible",appropriate
+"Why are you always disruptive?",inappropriate
+"Let's try to listen carefully",appropriate
+"Please don't interrupt others",appropriate
+"Why are you being so rude?",inappropriate
+"You're very helpful",appropriate
+"Stop making noise",inappropriate
+"Can you try to be still?",appropriate
+"You're very bright",appropriate
+"Why are you not listening?",inappropriate
+"Let's try to cooperate",appropriate
+"Please don't be rude",appropriate
+"Why are you always talking?",inappropriate
+"You're very polite",appropriate
+"Stop that right now",inappropriate
+"Can you stay focused?",appropriate
+"You're very joyful",appropriate
+"Why are you not cooperating?",inappropriate
+"Let's try to be quiet",appropriate
+"Please be mindful",appropriate
+"Why are you being disruptive?",inappropriate
+"You're very kind-hearted",appropriate
+"Stop being so noisy",inappropriate
+"Can you sit quietly?",appropriate
+"You're very nice",appropriate
+"Why are you being a problem?",inappropriate
+"Let's try to be gentle",appropriate
+"Please listen to me",appropriate
+"Why are you always disobeying?",inappropriate
+"You're very considerate",appropriate
+"Stop causing trouble",inappropriate
+"Can you be kind?",appropriate
+"You're very positive",appropriate
+"Why are you being so naughty?",inappropriate
+"Let's work on being quiet",appropriate
+"Please be patient with me",appropriate
+"Why are you making so much noise?",inappropriate
+"You're very respectful",appropriate
+"Stop being disruptive",inappropriate
+"Can you be a little quieter?",appropriate
+"You're very clever",appropriate
+"Why are you always causing problems?",inappropriate
+"Let's try to be polite",appropriate
+"Please stay seated",appropriate
+"Why are you acting like this?",inappropriate
+"You're very reliable",appropriate
+"Stop being so difficult",inappropriate
+"Can you help your friend?",appropriate
+"You're very thoughtful",appropriate
+"Why are you not being good?",inappropriate
+"Let's try to be nice",appropriate
+"Please be considerate of others",appropriate
+"Why are you always so loud?",inappropriate
+"You're very talented",appropriate
+"Stop being a nuisance",inappropriate
+"Can you calm down?",appropriate
+"You're very good at listening",appropriate
+"Why are you always in trouble?",inappropriate
+"Let's try to focus",appropriate
+"Please don't be noisy",appropriate
+"Why are you so disruptive?",inappropriate
+"You're very bright",appropriate
+"Stop making a fuss",inappropriate
+"Can you pay attention?",appropriate
+"You're very kind",appropriate
+"Why are you always so difficult?",inappropriate
+"Let's work on being respectful",appropriate
+"Please stay quiet for now",appropriate
+"Why are you causing a scene?",inappropriate
+"You're very smart",appropriate
+"Stop causing problems",inappropriate
+"Can you listen carefully?",appropriate
+"You're very gentle",appropriate
+"Why are you being so noisy?",inappropriate
+"Let's be patient with each other",appropriate
+"Please don't make noise",appropriate
+"Why are you always so restless?",inappropriate
+"You're very good at this",appropriate
+"Stop making a racket",inappropriate
+"Can you be a good listener?",appropriate
+"You're very kind-hearted",appropriate
+"Why are you always so rude?",inappropriate
+"Let's try to be calm",appropriate
+"Please don't be disruptive",appropriate
+"Why are you acting this way?",inappropriate
+"You're very reliable",appropriate
+"Stop being difficult",inappropriate
+"Can you help me with this?",appropriate
+"You're very creative",appropriate
+"Why are you always causing trouble?",inappropriate
+"Let's work together on this",appropriate
+"Please don't be rude",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very respectful",appropriate
+"Stop being so loud",inappropriate
+"Can you stay focused?",appropriate
+"You're very thoughtful",appropriate
+"Why are you making a mess?",inappropriate
+"Let's try to be nice",appropriate
+"Please be quiet for now",appropriate
+"Why are you being so disruptive?",inappropriate
+"You're very considerate",appropriate
+"Stop causing trouble",inappropriate
+"Can you sit still?",appropriate
+"You're very joyful",appropriate
+"Why are you always causing problems?",inappropriate
+"Let's try to focus on this",appropriate
+"Please don't be noisy",appropriate
+"Why are you being so naughty?",inappropriate
+"You're very good at listening",appropriate
+"Stop making so much noise",inappropriate
+"Can you listen to me?",appropriate
+"You're very kind",appropriate
+"Why are you not cooperating?",inappropriate
+"Let's try to stay calm",appropriate
+"Please don't shout",appropriate
+"Why are you being disruptive?",inappropriate
+"You're very bright",appropriate
+"Stop making a fuss",inappropriate
+"Can you pay attention?",appropriate
+"You're very thoughtful",appropriate
+"Why are you always so difficult?",inappropriate
+"Let's work on being respectful",appropriate
+"Please stay quiet for now",appropriate
+"Why are you causing a scene?",inappropriate
+"You're very smart",appropriate
+"Stop causing problems",inappropriate
+"Can you listen carefully?",appropriate
+"You're very gentle",appropriate
+"Why are you being so noisy?",inappropriate
+"Let's be patient with each other",appropriate
+"Please don't make noise",appropriate
+"Why are you always so restless?",inappropriate
+"You're very good at this",appropriate
+"Stop making a racket",inappropriate
+"Can you be a good listener?",appropriate
+"You're very kind-hearted",appropriate
+"Why are you always so rude?",inappropriate
+"Let's try to be calm",appropriate
+"Please don't be disruptive",appropriate
+"Why are you acting this way?",inappropriate
+"You're very reliable",appropriate
+"You're doing an excellent job!",appropriate
+"Why can't you sit still?",inappropriate
+"Thank you for being so attentive",appropriate
+"Do you have to make so much noise?",inappropriate
+"You're a wonderful student",appropriate
+"Why can't you follow instructions?",inappropriate
+"I'm so proud of your progress",appropriate
+"Why are you being disruptive?",inappropriate
+"Can you please help me?",appropriate
+"Why do you have to be so difficult?",inappropriate
+"You're such a hard worker",appropriate
+"Why are you talking when I’m talking?",inappropriate
+"You have a bright future ahead",appropriate
+"Do you want to get in trouble?",inappropriate
+"Keep up the fantastic work",appropriate
+"Why are you so loud?",inappropriate
+"I appreciate your cooperation",appropriate
+"Why can't you behave?",inappropriate
+"You're a star!",appropriate
+"Why do you always interrupt?",inappropriate
+"You're very creative",appropriate
+"Why do you always disobey?",inappropriate
+"Thank you for your help",appropriate
+"Why do you have to be so noisy?",inappropriate
+"You're very polite",appropriate
+"Why can't you be like everyone else?",inappropriate
+"You're such a good friend",appropriate
+"Do you think this behavior is acceptable?",inappropriate
+"You're doing a great job listening",appropriate
+"Why are you making a scene?",inappropriate
+"I'm so proud of you",appropriate
+"Why are you acting like this?",inappropriate
+"You're a great team player",appropriate
+"Do you think this is funny?",inappropriate
+"Thank you for your patience",appropriate
+"Why can't you be quiet?",inappropriate
+"You're very considerate",appropriate
+"Why are you so disruptive?",inappropriate
+"I'm very impressed with your work",appropriate
+"Why are you being so rude?",inappropriate
+"You're very responsible",appropriate
+"Why do you always cause trouble?",inappropriate
+"You're a fantastic student",appropriate
+"Do you want to get sent out?",inappropriate
+"Thank you for paying attention",appropriate
+"Why are you always so loud?",inappropriate
+"You're doing an amazing job",appropriate
+"Why are you being so difficult?",inappropriate
+"You're very kind",appropriate
+"Why can't you listen?",inappropriate
+"You're so thoughtful",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very respectful",appropriate
+"Why are you making a mess?",inappropriate
+"You're a joy to teach",appropriate
+"Do you have to make noise?",inappropriate
+"Thank you for your focus",appropriate
+"Why can't you sit quietly?",inappropriate
+"You're very insightful",appropriate
+"Why are you being such a problem?",inappropriate
+"You're very talented",appropriate
+"Why do you always disobey me?",inappropriate
+"You're an excellent listener",appropriate
+"Why are you not paying attention?",inappropriate
+"You're very diligent",appropriate
+"Why are you always talking?",inappropriate
+"You're so dependable",appropriate
+"Why can't you behave properly?",inappropriate
+"Thank you for your understanding",appropriate
+"Why are you always causing issues?",inappropriate
+"You're a wonderful child",appropriate
+"Why can't you be respectful?",inappropriate
+"You're very patient",appropriate
+"Do you have to be so loud?",inappropriate
+"Thank you for your respect",appropriate
+"Why can't you be quiet for once?",inappropriate
+"You're very hardworking",appropriate
+"Why do you have to be so disruptive?",inappropriate
+"You're a great role model",appropriate
+"Do you think it's okay to act like this?",inappropriate
+"You're very friendly",appropriate
+"Why do you always act out?",inappropriate
+"You're very generous",appropriate
+"Why can't you follow simple instructions?",inappropriate
+"Thank you for being attentive",appropriate
+"Why are you always the troublemaker?",inappropriate
+"You're very caring",appropriate
+"Why can't you be like the others?",inappropriate
+"You're very bright",appropriate
+"Why are you always so disrespectful?",inappropriate
+"You're doing a remarkable job",appropriate
+"Why do you always have to misbehave?",inappropriate
+"You're very respectful",appropriate
+"Why can't you be nice?",inappropriate
+"You're very clever",appropriate
+"Why are you so naughty?",inappropriate
+"You're very polite",appropriate
+"Why are you being a problem?",inappropriate
+"You're very considerate",appropriate
+"Why can't you sit still for a minute?",inappropriate
+"Thank you for being quiet",appropriate
+"Why do you have to make noise?",inappropriate
+"You're very good at sharing",appropriate
+"Why can't you follow the rules?",inappropriate
+"You're very enthusiastic",appropriate
+"Why do you have to be so annoying?",inappropriate
+"Thank you for your kindness",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very responsible",appropriate
+"Why are you making a fuss?",inappropriate
+"You're very reliable",appropriate
+"Why do you have to be so disruptive?",inappropriate
+"Thank you for being so patient",appropriate
+"Why can't you be still?",inappropriate
+"You're very good at this",appropriate
+"Why do you have to be so difficult?",inappropriate
+"You're very observant",appropriate
+"Why are you always causing trouble?",inappropriate
+"You're very imaginative",appropriate
+"Why do you always act out?",inappropriate
+"Thank you for being so helpful",appropriate
+"Why can't you listen to me?",inappropriate
+"You're very insightful",appropriate
+"Why are you so restless?",inappropriate
+"You're very good at following directions",appropriate
+"Why can't you follow the rules?",inappropriate
+"You're very thoughtful",appropriate
+"Why are you always disruptive?",inappropriate
+"You're very patient",appropriate
+"Why do you always have to be loud?",inappropriate
+"You're very kind-hearted",appropriate
+"Why are you always misbehaving?",inappropriate
+"Thank you for being respectful",appropriate
+"Why can't you sit still?",inappropriate
+"You're very bright",appropriate
+"Why do you always have to be noisy?",inappropriate
+"You're very hardworking",appropriate
+"Why are you so disruptive?",inappropriate
+"You're very talented",appropriate
+"Why do you always cause trouble?",inappropriate
+"Thank you for being so kind",appropriate
+"Why can't you be still for a moment?",inappropriate
+"You're very diligent",appropriate
+"Why do you always misbehave?",inappropriate
+"You're very clever",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very responsible",appropriate
+"Why do you have to be so loud?",inappropriate
+"You're very polite",appropriate
+"Why are you always in trouble?",inappropriate
+"You're very kind",appropriate
+"Why can't you behave?",inappropriate
+"Thank you for being so respectful",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very creative",appropriate
+"Why do you always have to be disruptive?",inappropriate
+"You're very attentive",appropriate
+"Why can't you follow the rules?",inappropriate
+"You're very thoughtful",appropriate
+"Why do you have to make noise?",inappropriate
+"Thank you for being so considerate",appropriate
+"Why are you always causing a fuss?",inappropriate
+"You're very reliable",appropriate
+"Why can't you be quiet for once?",inappropriate
+"You're very imaginative",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very responsible",appropriate
+"Why can't you be still?",inappropriate
+"Thank you for being so attentive",appropriate
+"Why are you always so difficult?",inappropriate
+"You're very creative",appropriate
+"Why do you always interrupt?",inappropriate
+"You're very kind",appropriate
+"Why do you always act up?",inappropriate
+"Thank you for being so reliable",appropriate
+"Why can't you listen?",inappropriate
+"You're very observant",appropriate
+"Why are you always so loud?",inappropriate
+"You're very good at this",appropriate
+"Why can't you be quiet?",inappropriate
+"You're very talented",appropriate
+"Why do you always have to misbehave?",inappropriate
+"Thank you for being so kind-hearted",appropriate
+"Why can't you follow directions?",inappropriate
+"You're very patient",appropriate
+"Why are you always causing trouble?",inappropriate
+"You're very attentive",appropriate
+"Why do you always have to be noisy?",inappropriate
+"You're very creative",appropriate
+"Why do you always interrupt?",inappropriate
+"You're very thoughtful",appropriate
+"Why are you always so disruptive?",inappropriate
+"Thank you for being so responsible",appropriate
+"Why can't you sit still for a minute?",inappropriate
+"You're very bright",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very clever",appropriate
+"Why do you always act out?",inappropriate
+"Thank you for being so creative",appropriate
+"Why can't you behave?",inappropriate
+"You're very good at this",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very kind",appropriate
+"Why can't you listen to me?",inappropriate
+"You're very polite",appropriate
+"Why do you always cause trouble?",inappropriate
+"Thank you for being so observant",appropriate
+"Why are you always misbehaving?",inappropriate
+"You're very responsible",appropriate
+"Why can't you be quiet?",inappropriate
+"You're very thoughtful",appropriate
+"Why do you always have to be disruptive?",inappropriate
+"You're very reliable",appropriate
+"Why are you always in trouble?",inappropriate
+"Thank you for being so attentive",appropriate
+"Why can't you follow directions?",inappropriate
+"You're very imaginative",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very observant",appropriate
+"Why do you always act up?",inappropriate
+"Thank you for being so polite",appropriate
+"Why can't you be still?",inappropriate
+"You're very creative",appropriate
+"Why are you always causing a fuss?",inappropriate
+"You're very diligent",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very kind-hearted",appropriate
+"Why are you always so loud?",inappropriate
+"Thank you for being so reliable",appropriate
+"Why can't you behave?",inappropriate
+"You're very good at this",appropriate
+"Why are you always misbehaving?",inappropriate
+"You're very thoughtful",appropriate
+"Why do you always interrupt?",inappropriate
+"You're very attentive",appropriate
+"Why are you always so disruptive?",inappropriate
+"Thank you for being so creative",appropriate
+"Why can't you be quiet?",inappropriate
+"You're very responsible",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very clever",appropriate
+"Why do you always act out?",inappropriate
+"Thank you for being so imaginative",appropriate
+"Why can't you listen?",inappropriate
+"You're very creative",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very thoughtful",appropriate
+"Why can't you follow directions?",inappropriate
+"You're very attentive",appropriate
+"Why are you always in trouble?",inappropriate
+"Thank you for being so bright",appropriate
+"Why do you always cause trouble?",inappropriate
+"You're very observant",appropriate
+"Why are you always so loud?",inappropriate
+"You're very responsible",appropriate
+"Why can't you behave?",inappropriate
+"Thank you for being so kind",appropriate
+"Why do you always misbehave?",inappropriate
+"You're very good at this",appropriate
+"Why are you always so disruptive?",inappropriate
+"You're very polite",appropriate
+"Why can't you be quiet?",inappropriate
+"You're very reliable",appropriate
+"Why do you always act up?",inappropriate
+"Thank you for being so thoughtful",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very attentive",appropriate
+"Why can't you follow directions?",inappropriate
+"You're very imaginative",appropriate
+"Why are you always in trouble?",inappropriate
+"Thank you for being so creative",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very bright",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very kind",appropriate
+"Why can't you listen?",inappropriate
+"You're very observant",appropriate
+"Why are you always causing a fuss?",inappropriate
+"Thank you for being so diligent",appropriate
+"Why do you always cause trouble?",inappropriate
+"You're very responsible",appropriate
+"Why are you always so loud?",inappropriate
+"You're very polite",appropriate
+"Why can't you behave?",inappropriate
+"You're very thoughtful",appropriate
+"Why are you always misbehaving?",inappropriate
+"You're very reliable",appropriate
+"Why do you always act out?",inappropriate
+"Thank you for being so imaginative",appropriate
+"Why can't you follow directions?",inappropriate
+"You're very attentive",appropriate
+"Why are you always in trouble?",inappropriate
+"You're very creative",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very clever",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very diligent",appropriate
+"Why can't you listen?",inappropriate
+"You're very kind-hearted",appropriate
+"Why are you always causing a fuss?",inappropriate
+"Thank you for being so bright",appropriate
+"Why do you always cause trouble?",inappropriate
+"You're very responsible",appropriate
+"Why are you always so loud?",inappropriate
+"You're very observant",appropriate
+"Why can't you behave?",inappropriate
+"You're very kind",appropriate
+"Why are you always misbehaving?",inappropriate
+"Thank you for being so creative",appropriate
+"Why do you always act up?",inappropriate
+"You're very good at this",appropriate
+"Why can't you be quiet?",inappropriate
+"You're very thoughtful",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very reliable",appropriate
+"Why can't you follow directions?",inappropriate
+"Thank you for being so imaginative",appropriate
+"Why are you always in trouble?",inappropriate
+"You're very bright",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very attentive",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very clever",appropriate
+"Why can't you listen?",inappropriate
+"You're very kind-hearted",appropriate
+"Why are you always causing a fuss?",inappropriate
+"Thank you for being so diligent",appropriate
+"Why do you always cause trouble?",inappropriate
+"You're very responsible",appropriate
+"Why are you always so loud?",inappropriate
+"You're very polite",appropriate
+"Why can't you behave?",inappropriate
+"You're very thoughtful",appropriate
+"Why are you always misbehaving?",inappropriate
+"You're very reliable",appropriate
+"Why do you always act out?",inappropriate
+"Thank you for being so imaginative",appropriate
+"Why can't you follow directions?",inappropriate
+"You're very attentive",appropriate
+"Why are you always in trouble?",inappropriate
+"You're very creative",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very clever",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very diligent",appropriate
+"Why can't you listen?",inappropriate
+"You're very kind-hearted",appropriate
+"Why are you always causing a fuss?",inappropriate
+"Thank you for being so bright",appropriate
+"Why do you always cause trouble?",inappropriate
+"You're very responsible",appropriate
+"Why are you always so loud?",inappropriate
+"You're very observant",appropriate
+"Why can't you behave?",inappropriate
+"You're very kind",appropriate
+"Why are you always misbehaving?",inappropriate
+"Thank you for being so creative",appropriate
+"Why do you always act up?",inappropriate
+"You're very good at this",appropriate
+"Why can't you be quiet?",inappropriate
+"You're very thoughtful",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very reliable",appropriate
+"Why can't you follow directions?",inappropriate
+"Thank you for being so imaginative",appropriate
+"Why are you always in trouble?",inappropriate
+"You're very bright",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very attentive",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very clever",appropriate
+"Why can't you listen?",inappropriate
+"You're very kind-hearted",appropriate
+"Why are you always causing a fuss?",inappropriate
+"Thank you for being so diligent",appropriate
+"Why do you always cause trouble?",inappropriate
+"You're very responsible",appropriate
+"Why are you always so loud?",inappropriate
+"You're very polite",appropriate
+"Why can't you behave?",inappropriate
+"You're very thoughtful",appropriate
+"Why are you always misbehaving?",inappropriate
+"You're very reliable",appropriate
+"Why do you always act out?",inappropriate
+"Thank you for being so imaginative",appropriate
+"Why can't you follow directions?",inappropriate
+"You're very attentive",appropriate
+"Why are you always in trouble?",inappropriate
+"You're very creative",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very clever",appropriate
+"Why are you always so noisy?",inappropriate
+"You're very diligent",appropriate
+"Why can't you listen?",inappropriate
+"You're very kind-hearted",appropriate
+"Why are you always causing a fuss?",inappropriate
+"Thank you for being so bright",appropriate
+"Why do you always cause trouble?",inappropriate
+"You're very responsible",appropriate
+"Why are you always so loud?",inappropriate
+"You're very observant",appropriate
+"Why can't you behave?",inappropriate
+"You're very kind",appropriate
+"Why are you always misbehaving?",inappropriate
+"Thank you for being so creative",appropriate
+"Why do you always act up?",inappropriate
+"You're very good at this",appropriate
+"Why can't you be quiet?",inappropriate
+"You're very thoughtful",appropriate
+"Why are you always causing problems?",inappropriate
+"You're very reliable",appropriate
+"Why can't you follow directions?",inappropriate
+"Thank you for being so imaginative",appropriate
+"Why are you always in trouble?",inappropriate
+"You're very bright",appropriate
+"Why do you always have to talk?",inappropriate
+"You're very attentive",appropriate
+You're so clever!",appropriate
+"Stop crying right now!",inappropriate
+"You are doing a great job",appropriate
+"Why can't you be quiet?",inappropriate
+"I'm proud of your work",appropriate
+"You need to be quiet",inappropriate
+"Well done!",appropriate
+"Stop that!",inappropriate
+"You are so talented",appropriate
+"Be silent!",inappropriate
+"Excellent work",appropriate
+"Why are you so noisy?",inappropriate
+"You are amazing",appropriate
+"Quiet down!",inappropriate
+"Great performance",appropriate
+"Don't make a sound",inappropriate
+"Wonderful",appropriate
+"Stop talking!",inappropriate
+"Fantastic job",appropriate
+"Sit still!",inappropriate
+"You did really well",appropriate
+"Why are you being difficult?",inappropriate
+"You're a star",appropriate
+"Stop being a nuisance",inappropriate
+"You're a great kid",appropriate
+"Stop causing trouble",inappropriate
+"Keep up the good work",appropriate
+"Stop being loud",inappropriate
+"You're so polite",appropriate
+"Why are you being so noisy?",inappropriate
+"You're so well-behaved",appropriate
+"Stop talking back",inappropriate
+"You're so kind-hearted",appropriate
+"Don't be a problem",inappropriate
+"You're very diligent",appropriate
+"Why are you being a troublemaker?",inappropriate
+"You're very respectful",appropriate
+"Why can't you behave?",inappropriate
+"You're very helpful",appropriate
+"Stop being disruptive",inappropriate
+"You're very thoughtful",appropriate
+"Stop making a mess",inappropriate
+"You're very honest",appropriate
+"Why are you always in trouble?",inappropriate
+"You're very imaginative",appropriate
+"Stop being so difficult",inappropriate
+"You're very observant",appropriate
+"Why are you being so loud?",inappropriate
+"You're very creative",appropriate
+"Stop making noise",inappropriate
+"You're very bright",appropriate
+"Stop being a nuisance",inappropriate
+"You're very hardworking",appropriate
+"Why are you not listening?",inappropriate
+"You're very dependable",appropriate
+"Stop misbehaving",inappropriate
+"You're very joyful",appropriate
+"Stop fooling around",inappropriate
+"You're very reliable",appropriate
+"Why can't you sit still?",inappropriate
+"You're very good at this",appropriate
+"Why are you being so disruptive?",inappropriate
+"You're very creative",appropriate
+"Why are you being difficult?,inappropriate
+"You are very smart",appropriate
+"You are excellent",appropriate
+"You are a good kid",appropriate
+"You don't know anything",inappropriate
+"Good kid",appropriate
+"Bad boy",inappropriate
+"I want to kiss you",inappropriate
+"I love you",appropriate
+"I hate you",inappropriate
+"You are amazing",appropriate
+"Stop being noisy",inappropriate
+"Fantastic job",appropriate
+"Quiet down",inappropriate
+"Excellent work",appropriate
+"Be silent",inappropriate
+"Well done",appropriate
+"Shut up",inappropriate
+"Great job",appropriate
+"Stop talking",inappropriate
+"You are a star",appropriate
+"Stop being disruptive",inappropriate
+"You are very talented",appropriate
+"You need to be quiet",inappropriate
+"You are very smart",appropriate
+"You are excellent",appropriate
+"You are a good kid",appropriate
+"You don't know anything",inappropriate
+"Good kid",appropriate
+"Bad boy",inappropriate
+"I want to kiss you",inappropriate
+"I love you",appropriate
+"I hate you",inappropriate
+"You are amazing",appropriate
+"Stop being noisy",inappropriate
+"Fantastic job",appropriate
+"Quiet down",inappropriate
+"Excellent work",appropriate
+"Be silent",inappropriate
+"Well done",appropriate
+"Shut up",inappropriate
+"Great job",appropriate
+"Stop talking",inappropriate
+"You are a star",appropriate
+"Stop being disruptive",inappropriate
+"You are very talented",appropriate
+"You need to be quiet",inappropriate
+"Your drawing is ugly",inappropriate
+"Ugly",inappropriate
+"Your drawing is really ugly",inappropriate
+"That drawing is very bad",inappropriate
+"You're so ugly",inappropriate
+"You're not smart",inappropriate
+"You are very talented",appropriate
+"You're incredibly smart",appropriate
+"You are an excellent child",appropriate
+"You are an excellent kid",appropriate
+"You're a good child",appropriate
+"You are so kind-hearted",appropriate
+"I appreciate your hard work",appropriate
+"You did a wonderful job",appropriate
+"You're a great friend",appropriate
+"You are very creative",appropriate
+"You're a fantastic listener",appropriate
+"You're a bad kid",inappropriate
+"Your drawing is really ugly",inappropriate
+"You are stupid",inappropriate
+"Why are you so dumb?",inappropriate
+"You're a bad child",inappropriate
+"You're a bad kid",inappropriate
+"You always mess things up",inappropriate
+"Stop being so annoying",inappropriate
+"Why can't you be good?",inappropriate
+"You're so lazy",inappropriate
+"You never do anything right",inappropriate
+"You're useless.","inappropriate"
+"You have potential to improve.","appropriate"
+"That was a dumb move.","inappropriate"
+"Next time, try considering all options.","appropriate"
+"You never do anything right.","inappropriate"
+"Everyone makes mistakes, let's learn from this.","appropriate"
+"You're not good enough.","inappropriate"
+"You can improve with practice.","appropriate"
+"Stop being such a baby.","inappropriate"
+"It's okay to feel upset.","appropriate"
+"Can't you do anything right?","inappropriate"
+"Let's work on this together.","appropriate"
+"You're always causing trouble.","inappropriate"
+"How can we avoid this situation next time?","appropriate"
+"What a terrible idea.","inappropriate"
+"That's an interesting thought, let's explore it further.","appropriate"
+"You're hopeless.","inappropriate"
+"There's always room for improvement.","appropriate"
+"You're just lazy.","inappropriate"
+"Let's find a way to keep you motivated.","appropriate"
+"Great job on the test.","appropriate"
+"That was a terrible effort.","inappropriate"
+"Keep up the good work.","appropriate"
+"You're never going to succeed.","inappropriate"
+"You're doing great.","appropriate"
+"You're failing at everything.","inappropriate"
+"I'm proud of your progress.","appropriate"
+"You're a disappointment.","inappropriate"
+"You've really improved.","appropriate"
+"You're still not good enough.","inappropriate"
+"Keep trying, you'll get there.","appropriate"
+"Give up, it's pointless.","inappropriate"
+"You can do it!","appropriate"
+"You'll never make it.","inappropriate"
+"I believe in you.","appropriate"
+"I don't think you can handle this.","inappropriate"
+"That's a good question.","appropriate"
+"That's a stupid question.","inappropriate"
+"You have great ideas.","appropriate"
+"Your ideas are worthless.","inappropriate"
+"That was an interesting insight.","appropriate"
+"That was interestingly bad.","inappropriate"
+"Try again, I know you can do it.","appropriate"
+"Try again, but I doubt you'll get it.","inappropriate"
+"Let's talk about this in a positive way.","appropriate"
+"Let's talk about how you messed up.","inappropriate"
+"Do you need help understanding this?","appropriate"
+"Do you need help because you can't do it on your own?","inappropriate"
+"That's a new and innovative approach.","appropriate"
+"That's a new and weird approach.","inappropriate"
+"You are useless.",inappropriate
+"Can't you do anything right?",inappropriate
+"You are such a disappointment.",inappropriate
+"Why are you so slow?",inappropriate
+"No one likes you.",inappropriate
+"You will never succeed.",inappropriate
+"Why are you even trying?",inappropriate
+"Stop being so annoying.",inappropriate
+"You are a waste of time.",inappropriate
+"Nobody cares about your opinion.",inappropriate
+"You are such a crybaby.",inappropriate
+"Stop acting like a baby.",inappropriate
+"You are so lazy.",inappropriate
+"I don't want to hear your excuses.",inappropriate
+"You are always messing things up.",inappropriate
+"You are so dumb.",inappropriate
+"Why can't you be like the others?",inappropriate
+"You are not good enough.",inappropriate
+"You will never amount to anything.",inappropriate
+"Stop being a burden.",inappropriate
+"I'm going to leave you here all alone","inappropriate"
+"I'm going to leave you here with your friends","appropriate"
+"You always make mistakes","inappropriate"
+"You sometimes make mistakes, and that's okay","appropriate"
+"No one likes you","inappropriate"
+"Everyone likes you","appropriate"
+"You will never be good at this","inappropriate"
+"You can improve with practice","appropriate"
+"Stop being so annoying","inappropriate"
+"Can you please be a bit quieter?","appropriate"
+"You are the worst student","inappropriate"
+"You can do better with a little more effort","appropriate"
+"You are such a failure","inappropriate"
+"Everyone makes mistakes and learns from them","appropriate"
+"You should just quit","inappropriate"
+"Keep trying, you'll get better","appropriate"
+"I don't care about you","inappropriate"
+"I care about you and want to help","appropriate"
+"Why can't you be like others?","inappropriate"
+"You are unique and that's great","appropriate"
+"Stop crying, it's annoying","inappropriate"
+"It's okay to cry, I'm here for you","appropriate"
+"You are so dumb","inappropriate"
+"You are smart and can figure this out","appropriate"
+"Nobody wants to play with you","inappropriate"
+"Would you like to join us in the game?","appropriate"
+"Go away, I don't want to see you","inappropriate"
+"Let's take a break and talk later","appropriate"
+"This is all your fault","inappropriate"
+"We can fix this together","appropriate"
