@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Kindergarten</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #E6F3FF;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .greeting {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .status {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        .status {
+            font-weight: bold;
+            color: #3344b3; /* Red color for error status */
+        }
+        .button {
+            padding: 12px 24px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #689DDF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #578cc3;
+        }
+        .button:active {
+            background-color: #456ea1;
+        }
+        .button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+        .motivational {
+            font-size: 20px;
+            color: #666;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .form-container {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .form-container h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .form-container input:focus {
+            border-color: #5bc0de;
+            outline: none;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #689DDF;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-container button:hover {
+            background-color: #1f8cba;
+        }
+        .form-container button:active {
+            background-color: #1f8cba;
+        }
+        .hidden {
+          display: none;
+        }
+        .form-choice {
+            margin-bottom: 20px;
+        }
+        .form-choice button {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="greeting">{{ greeting }}</div>
+        <div class="image-container">
+            <img src="https://media.rdpsd.ab.ca/media/Default/frl/0/shutterstock_1012303969%20[Converted].jpg" alt="Kindergarten Kids">
+        </div>
+        <div class="motivational">“Every child is a different kind of flower, and all together, they make this world a beautiful garden”</div>
+
+        <div class="form-choice">
+            <button class="button" onclick="showForm('register')">Register</button>
+            <button class="button" onclick="showForm('login')">Login</button>
+        </div>
+
+        <div class="form-container hidden" id="registrationForm">
+            <form>
+                <h2>Register</h2>
+                <label for="gardenName">Kindergarten's Name:</label>
+                <input type="text" id="gardenName" name="gardenName" required>
+
+                <label for="headTeacher">Kindergarten Teacher's Name:</label>
+                <input type="text" id="headTeacher" name="headTeacher" required>
+
+                <label for="phoneNumber">Kindergarten Teacher's Cell Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+                <label for="address">Kindergarten's Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <button type="button" class="button" onclick="submitRegistration()">Register</button>
+            </form>
+        </div>
+
+        <div class="form-container hidden" id="loginForm">
+            <form>
+                <h2>Login</h2>
+                <label for="loginGardenName">Kindergarten's Name:</label>
+                <input type="text" id="loginGardenName" name="loginGardenName" required>
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+
+                <button type="button" class="button" onclick="submitLogin()">Login</button>
+            </form>
+        </div>
+
+        <!-- New password display div -->
+        <div class="status hidden" id="generatedPassword"></div>
+
+        <div class="status" id="status">{{ status_message }}</div>
+        <button class="button" id="startButton" onclick="startScript()" disabled>Start Program</button>
+    </div>
+
+    <script>
+        function showForm(formType) {
+            document.getElementById('registrationForm').classList.add('hidden');
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('generatedPassword').classList.add('hidden'); // Hide password display
+
+            if (formType === 'register') {
+                document.getElementById('registrationForm').classList.remove('hidden');
+            } else if (formType === 'login') {
+                document.getElementById('loginForm').classList.remove('hidden');
+            }
+        }
+
+        let buttonDisabledUntil = 0; // Timestamp when button will be re-enabled
+        const COOLDOWN_PERIOD = 60000; // 1 minute cooldown
+
+        function startScript() {
+            const now = Date.now();
+
+            if (now < buttonDisabledUntil) {
+                return; // Exit if button is still in cooldown period
+            }
+
+            // Set the initial status message immediately to "Trying to start..."
+            document.getElementById('status').innerText = 'Trying to start...';
+            document.getElementById('startButton').disabled = true; // Disable the button
+
+            fetch('/start_script', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+
+                    // Set cooldown state if not already disabled forever
+                    if (data.message !== '"main_handler" is already running!') {
+                        buttonDisabledUntil = now + COOLDOWN_PERIOD;
+                        setTimeout(checkStatus, COOLDOWN_PERIOD);
+                    } else {
+                        buttonDisabledUntil = Infinity; // Disable permanently
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function submitLogin() {
+            const loginData = {
+                gardenName: document.getElementById('loginGardenName').value,
+                password: document.getElementById('loginPassword').value
+            };
+
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(loginData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) {
+                    document.getElementById('startButton').disabled = false; // Enable the Start Program button if login is successful
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function submitRegistration() {
+    const gardenName = document.getElementById('gardenName').value;
+    const headTeacher = document.getElementById('headTeacher').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const address = document.getElementById('address').value;
+
+    // Check if all fields are filled
+    if (!gardenName || !headTeacher || !phoneNumber || !address) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    // Validate phone number length (must be 10 digits)
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phoneNumber)) {
+        alert('Please enter a valid 10-digit phone number.');
+        return;
+    }
+
+    const formData = {
+        gardenName: gardenName,
+        headTeacher: headTeacher,
+        phoneNumber: phoneNumber,
+        address: address
+    };
+
+    fetch('/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+
+        // Show generated password
+        document.getElementById('generatedPassword').innerText = `Generated Password: ${data.password}`;
+        document.getElementById('generatedPassword').classList.remove('hidden');
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+
+        function checkStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').innerText = data.status_message;
+                    if (data.status_message === '"main_handler" is running! Listening...') {
+                        document.getElementById('startButton').disabled = false;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', checkStatus); // Initial status check
+    </script>
+</body>
+</html>
