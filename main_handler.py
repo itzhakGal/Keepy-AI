@@ -14,6 +14,7 @@ from audio_processor import AudioProcessor
 from cry_diagnosis.yamnet_model.crying_detector import CryingDetector
 from curse_diagnosis.curse_detector import CurseDetector
 from sentence_diagnosis.sentence_classifier import SentenceClassifier
+from positive_feedback.positiveSentenceClassifier import PositiveSentenceClassifier
 from server_communication.data_sender import DataSender
 from tensorflow.keras.models import load_model
 
@@ -25,6 +26,7 @@ class MainHandler:
         self.yamnet_crying_detector = CryingDetector()
         self.cnn_crying_model = load_model(Config.CNN_MODEL_PATH)
         self.sentence_classifier = SentenceClassifier()
+        self.positive_classifier = PositiveSentenceClassifier()
         self.kindergarten_name = 'tali'
         self.data_sender = DataSender()
 
@@ -36,6 +38,9 @@ class MainHandler:
         self.is_processing_event = False
         self.microphone_lock = threading.Lock()
         self.event_audio_data = None  # Initialize this attribute
+
+    def replace_underscore_with_space(self, text):
+        return text.replace('_', ' ')
 
     def generate_unique_id(self):
         return str(uuid.uuid4())
@@ -67,6 +72,9 @@ class MainHandler:
                     self.handle_event_detection("curse_word_detected", self.curse_detector.detect_curses, text)
                     self.handle_event_detection("inappropriate_sentence_detected",
                                                 self.sentence_classifier.classify_sentence, text)
+                    self.handle_event_detection("positive_sentence_detected",
+                                                self.positive_classifier.classify_sentence,
+                                                text)  # Handle positive sentences
 
         except KeyboardInterrupt:
             print("Exiting...")
@@ -114,11 +122,16 @@ class MainHandler:
                 input_data) == 'inappropriate':
             self.create_and_send_event(event_name, input_data)
 
+        elif event_name == "positive_sentence_detected" and input_data.strip() and detection_function(
+                input_data) == 'positive':  # Detect positive sentences
+            self.create_and_send_event(event_name, input_data)
+
     def create_and_send_event(self, event_type, input_data, detected_data=None):
         event_id = self.generate_unique_id()
+        event_type_formatted = self.replace_underscore_with_space(event_type)
         event_data = {
             "id": event_id,
-            "event": event_type,
+            "event": event_type_formatted,
             "timestamp": self.get_current_time(),
             "kindergarten_name": self.kindergarten_name
         }
@@ -132,6 +145,8 @@ class MainHandler:
             event_data["word"] = detected_data
         elif event_type == "inappropriate_sentence_detected":
             event_data["sentence"] = input_data
+        elif event_type == "positive_sentence_detected":  # Add event data for positive sentences
+            event_data["positive_sentence"] = input_data
 
         threading.Thread(target=self.process_event, args=(event_data, event_type, event_id)).start()
 
@@ -217,17 +232,14 @@ class MainHandler:
         return f"{now.day}/{now.month}/{now.year} {now.strftime('%H:%M:%S')}"
 
     def calculate_crying_intensity(self, waveform, sample_rate=16000):
-        # Compute the Root Mean Square (RMS) energy for the waveform
         rms_energy = librosa.feature.rms(y=waveform)[0]
 
-        # Normalize the RMS energy to a 1-10 scale for intensity
         intensity = np.mean(rms_energy) * 10  # This is a simplified scaling
-        intensity = min(max(intensity, 1), 10)  # Clip values to be between 1 and 10
+        intensity = min(max(intensity, 0), 10)  # Clip values to be between 1 and 10
 
         return intensity
 
     def calculate_crying_duration(self, waveform, sample_rate=16000):
-        # Apply a simple threshold to determine where crying occurs in the waveform
         threshold = 0.02  # Adjust this threshold as necessary
         non_silent_intervals = librosa.effects.split(y=waveform, top_db=20)
 
