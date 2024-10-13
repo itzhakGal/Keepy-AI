@@ -7,8 +7,19 @@ The **Keepy - AI** repository contains the machine learning models and audio pro
 
 ## 📁 Structure
 
-- **models/**: Contains the pre-trained models used for sound classification.
-- **scripts/**: Audio processing scripts that handle feature extraction, model inference, and interaction with the server.
+- **cry_diagnosis/**: Contains scripts and models used for detecting crying in the audio data.
+- **curse_diagnosis/**: Contains scripts and models used for detecting profanity in the audio data.
+- **positive_feedback/**: Handles positive feedback classification based on audio events.
+- **sentence_diagnosis/**: Contains scripts and models used for detecting inappropriate sentences.
+- **server_communication/**: Handles communication between the AI and the server.
+- **templates/**: Contains template files used for various AI-related tasks.
+
+- **app.py**: Main application script for running the AI module.
+- **audio_processor.py**: Handles audio processing tasks like feature extraction.
+- **config.py**: Configuration file for setting up paths and parameters for the AI system.
+- **events.txt**: Logs events related to detected audio anomalies.
+- **main_handler.py**: Main handler for orchestrating the AI processes and sending results to the server.
+- **registrations.json**: Stores registration information for different audio event types.
 
 ---
 
